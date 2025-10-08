@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* OUTSIDE CONTAINER */
+#home-body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("/images/background.png");
+    z-index: -3;
+    /* add child widths */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* LEFT HOMEPAGE */
+#home-left {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+#plant-img
+{
+    width: 100%;
+    height: 30%;
+    /* margin-right: 4rem; */
+}
+
+/* MIDDLE HOMEPAGE */
+#carpet {
+    width: 60%;
+    height: 80%;
+    background-image: url("/images/carpet.webp");
+    /* z-index: -2; */
+    display: flex;
+    flex-direction: column;
+    /* align-items or justify-content --> flex-end */
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* TABLE */
+#table {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#table-img {
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    z-index: 1;
+
+}
+
+#table-contents-parent {
+    height: 80%;
+    /* width: 100%; */
+    
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+    flex-flow: row wrap;
+
+    /* position: absolute;
+    top: 30%; */
+    z-index: 2;
+
+    
+
+}
+
+.table-contents-child {
+    height: 60%;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    transition: transform .2s;
+    
+}
+
+.table-contents-child:hover
+{
+    transform: scale(1.3);
+}
+
+#contact-info-link, #portfolio-link
+{
+    /* justify-content: flex-end; */
+    margin-top: 5rem;
+}
+
+#contact-info-link
+{
+    rotate: -45deg;
+
+    /* Zoom in Effect */
+    /* transition: transform .2s; */
+}
+
+
+
+#about-me-link
+{
+    /* align-self: flex-start; */
+    /* height: 100%; */
+}
+
+#portfolio-link
+{
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
+    
+}
+
+#portfolio-link > div
+{
+    rotate: 30deg;
+    padding-right: 4rem;
+}
+
+#music-link
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#contact-img {
+    height: 35%;
+}
+
+
+
+#cover-img {
+    height: 80%;
+    padding-top: 2rem;
+}
+
+#portfolio-img {
+    height: 60%;
+    rotate: 10deg;
+}
+
+#computer-img {
+    height: 30%;
+}
+
+#chair {
+    height: 30%;
+}
+
+#chair-img {
+    /* Bigger than 100% in order to obtain overlapping effect. */
+    height: 120%;
+}
+
+/* RIGHT HOMEPAGE */
+#home-right {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#doggybed-img, #dog-img
+{
+    height: 40%;
+    width: 80%;
+}
+
+#dog-img
+{
+    rotate: 60deg;
+}
+
+#dogtoy-img
+{
+    position: absolute;
+    left: 65%;
+    top: 70%;
+    width: 30%;
+}
+
+@keyframes rotate-custom {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    /* 100% {
+        transform: rotate(-10deg);
+    } */
+}
+
+#doggybed-img, #dog-img, #plant-img, #dogtoy-img
+{
+    animation: rotate-custom .6s ease-in-out infinite;
+}
+
+
+/* @keyframes rotate {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(10deg);
+    }
+}
+#contact-info-link:hover
+{
+    animation: rotate 1s ease-in-out infinite;
+} */
+
+
+a
+{
+    color: black;
+}
+
+a:link, a:visited {
+    color: black;
+}

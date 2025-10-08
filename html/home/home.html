@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<body class="home-page" id="home-body">
+
+    <script>
+        clicked = false
+        function play() {
+            var audio=document.getElementById("audio");
+
+            if (clicked == false)
+            {
+                clicked = false
+                audio.play();
+                clicked = true
+            }
+            else
+            {
+                audio.pause()
+                clicked = false
+            }
+        }
+    </script>
+
+    <!-- HOME LEFT -->
+    <section class="home-page" id="home-left">
+        <img id="plant-img" src="/images/Plant pixel.png" alt="Plant-Image" />
+    </section>
+
+    <!-- HOME MIDDLE -->
+    <section class="home-page" id="carpet">
+
+        <!-- TABLE -->
+        <section class="home-page" id="table">
+
+            <!-- TABLE IMAGE -->
+            <img id="table-img" src="/images/table.png" alt="Table-Image" />
+
+            <!-- TABLE CONTENTS -->
+            <div class="home-page table-items" id="table-contents-parent">
+
+                <!-- CONTACT IMAGE -->
+                <a 
+                  class="home-page table-items table-contents-child" 
+                  id="contact-info-link"
+                  href="/html/home/contact-page.html"
+                >
+                    <img id="contact-img" src="/images/contact.png" alt="Contact-Image" />
+                    <div><ul>Contact Info</ul></div>
+                </a>
+
+                <!-- ABOUT ME -->
+                <a 
+                  class="home-page table-items table-contents-child" 
+                  id="about-me-link"
+                  href="/html/home/about-me.html"
+                >
+                    <img id="cover-img" src="/images/cover.png" alt="Cover-Image" />
+                    <div><ul>About Me</ul></div>
+                </a>
+
+                <!-- PORTFOLIO -->
+                <a 
+                  class="home-page table-items table-contents-child" 
+                  id="portfolio-link"
+                  href="/html/home/portfolio.html"
+                >
+                    <img id="portfolio-img" src="/images/folders.png" alt="Portfolio-Image" />
+                    <div><ul>Portfolio</ul></div>
+                </a>
+
+                <!-- MUSIC -->
+                <a 
+                  class="home-page table-items table-contents-child" 
+                  id="music-link"
+                  onclick="play()"
+                >
+                    <audio id="audio" src="/music/Jpeg.mp4"></audio>
+                    <img id="computer-img" src="/images/computer.png" alt="Computer-Image" />
+                    <div><ul>Turn Music On/Off</ul></div>
+                </a>
+            </div>
+            <!-- END OF TABLE CONTENTS -->
+
+            
+        </section>
+
+        <section class="home-page chair-t" id="chair">
+            <img id="chair-img" src="/images/chair.png" alt="Chair-Image" />
+        </section>
+
+    </section>
+
+    <!-- HOME RIGHT -->
+    <section class="home-page" id="home-right">
+        <img id="doggybed-img" src="/images/doggybed.png" alt="Doggybed-Image" />
+        <img id="dog-img" src="/images/dog.png" alt="Doggybed-Image" />
+        <img id="dogtoy-img" src="/images/dogtoy.png" alt="Dogtoy-Image" />
+
+    </section>
+</body>
+</html>
