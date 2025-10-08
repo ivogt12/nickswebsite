@@ -1,242 +1,238 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size:0.98rem;
 }
 
-/* OUTSIDE CONTAINER */
 #home-body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-image: url("/images/background.png");
-    z-index: -3;
-    /* add child widths */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("/images/background.png");
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-/* LEFT HOMEPAGE */
+/* LEFT */
 #home-left {
-    width: 20%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+#plant-img {
+  width: 100%;
+  height: 30%;
 }
 
-#plant-img
-{
-    width: 100%;
-    height: 30%;
-    /* margin-right: 4rem; */
-}
-
-/* MIDDLE HOMEPAGE */
+/* MIDDLE */
 #carpet {
-    width: 60%;
-    height: 80%;
-    background-image: url("/images/carpet.webp");
-    /* z-index: -2; */
-    display: flex;
-    flex-direction: column;
-    /* align-items or justify-content --> flex-end */
-    align-items: center;
-    justify-content: flex-end;
+  width: 60%;
+  height: 80%;
+  background-image: url("/images/carpet.webp");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* TABLE */
 #table {
-    height: 70%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
-
 #table-img {
-    height: 60%;
-    position: absolute;
-    top: 20%;
-    z-index: 1;
-
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  z-index: 1;
 }
-
 #table-contents-parent {
-    height: 80%;
-    /* width: 100%; */
-    
-    display: flex;
-    /* align-items: flex-end; */
-    justify-content: center;
-    flex-flow: row wrap;
-
-    /* position: absolute;
-    top: 30%; */
-    z-index: 2;
-
-    
-
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  z-index: 2;
 }
 
+/* BUTTONS (replace links) */
 .table-contents-child {
-    height: 60%;
-    width: 30%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-
-    transition: transform .2s;
-    
+  height: 60%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transition: transform 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.table-contents-child:hover {
+  transform: scale(1.3);
 }
 
-.table-contents-child:hover
-{
-    transform: scale(1.3);
+#contact-info-btn, #portfolio-btn {
+  margin-top: 5rem;
 }
-
-#contact-info-link, #portfolio-link
-{
-    /* justify-content: flex-end; */
-    margin-top: 5rem;
+#about-me-btn {
+    /* margin-right: 1rem; */
 }
-
-#contact-info-link
-{
-    rotate: -45deg;
-
-    /* Zoom in Effect */
-    /* transition: transform .2s; */
+#contact-info-btn {
+  margin-top: 4rem;
+  rotate: -45deg;
+  padding-right: 2rem;
 }
-
-
-
-#about-me-link
-{
-    /* align-self: flex-start; */
-    /* height: 100%; */
+#portfolio-btn {
+    margin-right: 1.6rem;
 }
-
-#portfolio-link
-{
-    /* display: flex; */
-    /* align-items: center;
-    justify-content: center; */
-    
+#portfolio-btn > div {
+  rotate: 30deg;
+  padding-right: 4rem;
 }
-
-#portfolio-link > div
-{
-    rotate: 30deg;
-    padding-right: 4rem;
-}
-
-#music-link
-{
-    display: flex;
-    justify-content: flex-start;
+#music-btn {
+  display: flex;
+  justify-content: flex-start;
 }
 
 #contact-img {
-    height: 35%;
+  height: 35%;
 }
-
-
-
 #cover-img {
-    height: 80%;
-    padding-top: 2rem;
+  height: 80%;
+  padding-top: 2rem;
 }
-
 #portfolio-img {
-    height: 60%;
-    rotate: 10deg;
+  height: 60%;
+  rotate: 10deg;
 }
-
 #computer-img {
-    height: 30%;
+  height: 30%;
 }
-
 #chair {
-    height: 30%;
+  height: 30%;
 }
-
 #chair-img {
-    /* Bigger than 100% in order to obtain overlapping effect. */
-    height: 120%;
+  height: 120%;
 }
 
-/* RIGHT HOMEPAGE */
+/* RIGHT */
 #home-right {
-    width: 20%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#doggybed-img, #dog-img {
+  height: 40%;
+  width: 80%;
+}
+#dog-img {
+  rotate: 60deg;
+}
+#dogtoy-img {
+  position: absolute;
+  left: 65%;
+  top: 70%;
+  width: 30%;
 }
 
-#doggybed-img, #dog-img
-{
-    height: 40%;
-    width: 80%;
-}
-
-#dog-img
-{
-    rotate: 60deg;
-}
-
-#dogtoy-img
-{
-    position: absolute;
-    left: 65%;
-    top: 70%;
-    width: 30%;
-}
-
+/* MUSIC ANIMATION */
 @keyframes rotate-custom {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(10deg);
-    }
-    /* 100% {
-        transform: rotate(-10deg);
-    } */
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+.animated-image.playing {
+  animation: rotate-custom 0.6s ease-in-out infinite;
 }
 
-#doggybed-img, #dog-img, #plant-img, #dogtoy-img
-{
-    animation: rotate-custom .6s ease-in-out infinite;
+/* EXPANDING IMAGE OVERLAY */
+#expand-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+#expand-image {
+  width: 10%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: transform 1s ease, width 1s ease, opacity 1s ease;
+  transform: scale(0.5);
+  opacity: 0;
+}
+#expand-overlay.active #expand-image {
+  width: 70%;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Larger expansion just for About Me */
+#expand-overlay.active #expand-image.large-expand {
+  width: 90%; /* expand more than normal (default 70%) */
+  transform: scale(1.1);
 }
 
 
-/* @keyframes rotate {
-    to {
-        transform: rotate(0deg);
-    }
-    from {
-        transform: rotate(10deg);
-    }
-}
-#contact-info-link:hover
-{
-    animation: rotate 1s ease-in-out infinite;
-} */
-
-
-a
-{
-    color: black;
+/* RESET BUTTON LOOK */
+button {
+  all: unset;
 }
 
-a:link, a:visited {
-    color: black;
+/* TEXT */
+ul {
+  list-style: none;
+  font-family: sans-serif;
 }
+
+.title {
+    text-decoration: underline;
+}
+
+/* Close button in overlay */
+#close-overlay {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+
+  z-index: 10000;
+  transition: transform 0.2s ease, background 0.2s ease;
+  line-height: 1; /* Prevent vertical misalignment */
+  padding-bottom: 1px; /* Subtle optical balance */
+}
+
+#close-overlay:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.15);
+}
+

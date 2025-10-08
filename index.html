@@ -1,107 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
 <body class="home-page" id="home-body">
 
-    <script>
-        clicked = false
-        function play() {
-            var audio=document.getElementById("audio");
+  <!-- LEFT -->
+  <section class="home-page" id="home-left">
+    <img id="plant-img" class="animated-image" src="/images/Plant pixel.png" alt="Plant" />
+  </section>
 
-            if (clicked == false)
-            {
-                clicked = false
-                audio.play();
-                clicked = true
-            }
-            else
-            {
-                audio.pause()
-                clicked = false
-            }
+  <!-- MIDDLE -->
+  <section class="home-page" id="carpet">
+    <section class="home-page" id="table">
+      <img id="table-img" src="/images/table.png" alt="Table" />
+
+      <div class="home-page table-items" id="table-contents-parent">
+
+        <!-- CONTACT -->
+        <button class="home-page table-items table-contents-child" id="contact-info-btn">
+          <img id="contact-img" src="/images/contact.png" alt="Contact" />
+          <div class="title"><ul>Contact Info</ul></div>
+        </button>
+
+        <!-- ABOUT ME -->
+        <button class="home-page table-items table-contents-child" id="about-me-btn">
+          <img id="cover-img" src="/images/cover.png" alt="About Me" />
+          <div class="title"><ul>About Me</ul></div>
+        </button>
+
+        <!-- PORTFOLIO -->
+        <button class="home-page table-items table-contents-child" id="portfolio-btn">
+          <img id="portfolio-img" src="/images/folders.png" alt="Portfolio" />
+          <div class="title"><ul>Portfolio</ul></div>
+        </button>
+
+        <!-- MUSIC -->
+        <button class="home-page table-items table-contents-child" id="music-btn" onclick="play()">
+          <audio id="audio" src="/music/Jpeg.mp4"></audio>
+          <img id="computer-img" src="/images/computer.png" alt="Computer" />
+          <div><ul>Turn Music On/Off</ul></div>
+        </button>
+      </div>
+    </section>
+
+    <section class="home-page chair-t" id="chair">
+      <img id="chair-img" src="/images/chair.png" alt="Chair" />
+    </section>
+  </section>
+
+  <!-- RIGHT -->
+  <section class="home-page" id="home-right">
+    <img id="doggybed-img" class="animated-image" src="/images/doggybed.png" alt="Doggy Bed" />
+    <img id="dog-img" class="animated-image" src="/images/dog.png" alt="Dog" />
+    <img id="dogtoy-img" src="/images/dogtoy.png" alt="Dog Toy" />
+  </section>
+
+  <!-- EXPANDING IMAGE OVERLAY -->
+  <div id="expand-overlay">
+        <button id="close-overlay">✕</button>
+        <img id="expand-image" src="" alt="Expanded">
+    </div>
+
+
+  <!-- SCRIPT -->
+  <script>
+  let clicked = false;
+
+  function play() {
+    const audio = document.getElementById("audio");
+    const animatedImages = document.querySelectorAll(".animated-image");
+
+    if (!clicked) {
+      audio.play();
+      clicked = true;
+      animatedImages.forEach(img => img.classList.add("playing"));
+    } else {
+      audio.pause();
+      clicked = false;
+      animatedImages.forEach(img => img.classList.remove("playing"));
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("expand-overlay");
+    const expandImage = document.getElementById("expand-image");
+    const closeButton = document.getElementById("close-overlay");
+
+    // Define mapping of buttons to backside images
+    const buttons = [
+      { id: "contact-info-btn", backside: "/images/backside_of_contact.png" },
+      { id: "about-me-btn", backside: "/images/backside_of_poster.png" },
+      { id: "portfolio-btn", backside: "/images/backside_of_folders.png" },
+    ];
+
+    // Add click event to each button
+    buttons.forEach(btn => {
+      const element = document.getElementById(btn.id);
+      element.addEventListener("click", () => {
+        expandImage.src = btn.backside;
+        overlay.style.display = "flex";
+
+        // Custom expansion for About Me
+        if (btn.id === "about-me-btn") {
+          expandImage.classList.add("large-expand");
+        } else {
+          expandImage.classList.remove("large-expand");
         }
-    </script>
 
-    <!-- HOME LEFT -->
-    <section class="home-page" id="home-left">
-        <img id="plant-img" src="/images/Plant pixel.png" alt="Plant-Image" />
-    </section>
+        // Trigger animation to grow
+        setTimeout(() => overlay.classList.add("active"), 10);
+      });
+    });
 
-    <!-- HOME MIDDLE -->
-    <section class="home-page" id="carpet">
+    // Close button functionality
+    closeButton.addEventListener("click", () => {
+      overlay.classList.remove("active");
+      setTimeout(() => {
+        overlay.style.display = "none";
+        expandImage.src = ""; // reset image
+      }, 500);
+    });
+  });
+</script>
 
-        <!-- TABLE -->
-        <section class="home-page" id="table">
-
-            <!-- TABLE IMAGE -->
-            <img id="table-img" src="/images/table.png" alt="Table-Image" />
-
-            <!-- TABLE CONTENTS -->
-            <div class="home-page table-items" id="table-contents-parent">
-
-                <!-- CONTACT IMAGE -->
-                <a 
-                  class="home-page table-items table-contents-child" 
-                  id="contact-info-link"
-                  href="/html/home/contact-page.html"
-                >
-                    <img id="contact-img" src="/images/contact.png" alt="Contact-Image" />
-                    <div><ul>Contact Info</ul></div>
-                </a>
-
-                <!-- ABOUT ME -->
-                <a 
-                  class="home-page table-items table-contents-child" 
-                  id="about-me-link"
-                  href="/html/home/about-me.html"
-                >
-                    <img id="cover-img" src="/images/cover.png" alt="Cover-Image" />
-                    <div><ul>About Me</ul></div>
-                </a>
-
-                <!-- PORTFOLIO -->
-                <a 
-                  class="home-page table-items table-contents-child" 
-                  id="portfolio-link"
-                  href="/html/home/portfolio.html"
-                >
-                    <img id="portfolio-img" src="/images/folders.png" alt="Portfolio-Image" />
-                    <div><ul>Portfolio</ul></div>
-                </a>
-
-                <!-- MUSIC -->
-                <a 
-                  class="home-page table-items table-contents-child" 
-                  id="music-link"
-                  onclick="play()"
-                >
-                    <audio id="audio" src="/music/Jpeg.mp4"></audio>
-                    <img id="computer-img" src="/images/computer.png" alt="Computer-Image" />
-                    <div><ul>Turn Music On/Off</ul></div>
-                </a>
-            </div>
-            <!-- END OF TABLE CONTENTS -->
-
-            
-        </section>
-
-        <section class="home-page chair-t" id="chair">
-            <img id="chair-img" src="/images/chair.png" alt="Chair-Image" />
-        </section>
-
-    </section>
-
-    <!-- HOME RIGHT -->
-    <section class="home-page" id="home-right">
-        <img id="doggybed-img" src="/images/doggybed.png" alt="Doggybed-Image" />
-        <img id="dog-img" src="/images/dog.png" alt="Doggybed-Image" />
-        <img id="dogtoy-img" src="/images/dogtoy.png" alt="Dogtoy-Image" />
-
-    </section>
 </body>
 </html>
