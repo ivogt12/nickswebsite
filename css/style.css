@@ -236,3 +236,87 @@ ul {
   transform: scale(1.15);
 }
 
+/* ---------- RESPONSIVE FIX (table images shrink properly) ---------- */
+@media (max-width: 1200px) {
+  /* Slightly shrink table contents for medium screens (e.g. tablets, small laptops) */
+  #table-contents-parent {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 900px) {
+  #home-body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-size: cover;
+  }
+
+  /* Hide the left/right side sections */
+  #home-left, #home-right {
+    display: none;
+  }
+
+  #carpet {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    justify-content: center;
+  }
+
+  #table {
+    height: auto;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #table-contents-parent {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    transform: scale(1);
+  }
+
+  /* ✅ Make each table item and its image responsive */
+  .table-contents-child {
+    width: 60%;
+    height: auto;
+  }
+
+  .table-contents-child img {
+    width: 100%;
+    height: auto; /* ensures proportional scaling */
+    max-width: 220px; /* optional: caps size on medium screens */
+  }
+
+  /* Titles below each image */
+  .title ul {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* Expand overlay image sizing */
+  #expand-image {
+    width: 85% !important;
+  }
+
+  #close-overlay {
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* For very small phones — shrink table even more */
+  .table-contents-child {
+    width: 80%;
+  }
+  .table-contents-child img {
+    max-width: 180px;
+  }
+}
