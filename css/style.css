@@ -16,8 +16,8 @@ html, body {
 
 
 #home-body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-image: url("/images/background.webp");
   display: flex;
   flex-direction: row;
@@ -363,6 +363,40 @@ ul {
     justify-content: center;
   }
   #portfolio-btn {
-    margin-right: 0.1rem;
+    margin-right: 0.5rem;
+  }
+}
+@media(max-width: 315px) {
+  * {
+    font-size: 0.66rem;
+  }
+  #carpet {
+    height: 60%;
+    width: 90%;
+  }
+  #table {
+    width: 80%;
+  }
+  #table-img {
+    height: 30%;
+    top: 38%;
+  }
+  #table-contents-parent {
+    height: 80%;
+    width: 110%;
+  }
+  #table-contents-child {
+    height: 15%;
+    justify-content: center;
+    width: 15%;
+  }
+  #cover-img {
+    height: 70%;
+  }
+  #contact-img {
+    height: 30%;
+  }
+  #portfolio-btn {
+    margin-right: 0;
   }
 }
