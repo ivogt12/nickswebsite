@@ -263,6 +263,14 @@ ul {
     height: 48%;
   }
 }
+
+@media (max-width: 840px) {
+    .table-contents-child {
+    width: 28%;
+    height: 48%;
+  }
+}
+
 @media (max-width: 700px) {
   * {
     font-size: 0.82rem;
@@ -366,7 +374,7 @@ ul {
   }
   #table-contents-parent {
     height: 70%;
-    /* width: 50%; */
+    width: 50%;
   }
   #table-contents-child {
     justify-content: center;
